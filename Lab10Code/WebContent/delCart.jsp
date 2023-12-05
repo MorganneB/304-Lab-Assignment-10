@@ -10,25 +10,15 @@ if (productList == null)
 	productList = new HashMap<String, ArrayList<Object>>();
 }
 
+
 // Remove  product selected
 // Get product information
 String id = request.getParameter("id");
-String name = request.getParameter("name");
-String price = request.getParameter("price");
-Integer quantity = new Integer(1);
 
-// Store product information in an ArrayList
-ArrayList<Object> product = new ArrayList<Object>();
-product.add(id);
-product.add(name);
-product.add(price);
-product.add(quantity);
-
-// Update quantity if add same item to order again
-if (productList.containsKey(id))
-{	
-	productList.remove(id, product);
+if(id != null) {
+	productList.remove(id);
 }
+
 
 session.setAttribute("productList", productList);
 %>

@@ -113,9 +113,7 @@ else
 		out.print("<tr><td>"+product.get(0)+"</td>");
 		out.print("<td>"+product.get(1)+"</td>");
 		out.print("<td align=\"center\">"+product.get(3)+"</td>");
-		//out.println("<td><a href='delCart.jsp?id=" + product.get(0) + "&name=" + product.get(1) + "'>Remove From Cart</a></td>");
-		out.print("<td> Remove From Cart </td>");
-
+		out.println("<td><a href='delCart.jsp?id=" + product.get(0) + "&name=" + product.get(1) + "'>Remove From Cart</a></td>");
 
 		Object price = product.get(2);
 		Object itemqty = product.get(3);
