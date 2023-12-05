@@ -152,10 +152,16 @@ if(name != null) {
 				pstmt.setString(1, categoryNum);
 			} else {
 				// Show products based on search term and category
-				SQL = "SELECT * FROM Product WHERE productName LIKE ? AND categoryId = ?";
-				pstmt = con.prepareStatement(SQL);
-				pstmt.setString(1, "%" + name + "%");
-				pstmt.setString(2, categoryNum);
+				if(categoryNum.equals("1") | categoryNum.equals("2") | categoryNum.equals("3") | categoryNum.equals("4")) {
+					SQL = "SELECT * FROM Product WHERE productName LIKE ? AND categoryId = ?";
+					pstmt = con.prepareStatement(SQL);
+					pstmt.setString(1, "%" + name + "%");
+					pstmt.setString(2, categoryNum);
+				} else {
+					SQL = "SELECT * FROM Product WHERE productName LIKE ?";
+					pstmt = con.prepareStatement(SQL);
+					pstmt.setString(1, "%" + name + "%");
+				}
 			}
 			rst = pstmt.executeQuery();
 
