@@ -143,14 +143,10 @@ CREATE TABLE review (
         ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-INSERT INTO category(categoryName) VALUES ('Beverages');
-INSERT INTO category(categoryName) VALUES ('Condiments');
-INSERT INTO category(categoryName) VALUES ('Dairy Products');
-INSERT INTO category(categoryName) VALUES ('Produce');
-INSERT INTO category(categoryName) VALUES ('Meat/Poultry');
-INSERT INTO category(categoryName) VALUES ('Seafood');
-INSERT INTO category(categoryName) VALUES ('Confections');
-INSERT INTO category(categoryName) VALUES ('Grains/Cereals');
+INSERT INTO category(categoryName) VALUES ('Cats');
+INSERT INTO category(categoryName) VALUES ('Dogs');
+INSERT INTO category(categoryName) VALUES ('Fish');
+INSERT INTO category(categoryName) VALUES ('Birds');
 
 INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('KittyCat Fluffy Bed (Pink)', 1, 'Designed with comfort, and style and for you and your cat. Available in only one size, 60 x 60 x 20 cm', 49.99);
 INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('KittyCat Fluffy Bed (Cream)', 1 ,'Designed with comfort, and style and for you and your cat. Available in only one size, 60 x 60 x 20 cm', 49.99);
