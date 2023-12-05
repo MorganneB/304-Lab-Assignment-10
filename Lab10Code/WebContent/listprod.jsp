@@ -108,13 +108,22 @@
 
 <h2> Search for the products you want to buy: </h2>
 
+
 <form method="get" action="listprod.jsp">
+<select name="categoryOption">
+	<option value="All">All</option>
+	<option value="1">Cats</option>
+	<option value="2">Dogs</option>
+	<option value="3">Fish</option>
+	<option value="4">Birds</option>
+</select>
 <input type="text" name="productName" size="50">
 <input type="submit" value="Submit"><input type="reset" value="Reset"> (Leave blank for all products)
 </form>
 
 <% 
 String name = request.getParameter("productName"); // Get product name to search for
+String categoryNum = request.getParameter("categoryOption"); 
 		
 //Note: Forces loading of SQL Server driver
 if(name != null) {
@@ -127,30 +136,71 @@ if(name != null) {
 		Connection con = null;														//Create variables for connection
 		PreparedStatement pstmt = null;
 		ResultSet rst = null;
+		String SQL;
 
 		try {
 			con = DriverManager.getConnection(url, uid, pw);						// Make the connection
-			String SQL = "SELECT * FROM Product WHERE productName LIKE ?";
-			pstmt = con.prepareStatement(SQL);
-			pstmt.setString(1, "%" + name + "%");
+
+			if (name.equals("") && categoryNum.equals("All")) {
+				// Show all products
+				SQL = "SELECT * FROM Product";
+				pstmt = con.prepareStatement(SQL);
+			} else if (name.equals("")) {
+				// Show products based on category
+				SQL = "SELECT * FROM Product WHERE categoryId = ?";
+				pstmt = con.prepareStatement(SQL);
+				pstmt.setString(1, categoryNum);
+			} else {
+				// Show products based on search term and category
+				SQL = "SELECT * FROM Product WHERE productName LIKE ? AND categoryId = ?";
+				pstmt = con.prepareStatement(SQL);
+				pstmt.setString(1, "%" + name + "%");
+				pstmt.setString(2, categoryNum);
+			}
 			rst = pstmt.executeQuery();
-		
+
 			if(!rst.isBeforeFirst()) { //if the cursor is not at the default position (top of the table), then print no products with given name
 				out.println("<h2> No products found containing " + name + "</h2>");
 			} else {
-				if(name == "") {													//Header for no input(all products)
+				if (name.equals("") && categoryNum.equals("All")) {
+					// Show all products
 					out.println("<h2> Showing All Products </h2>");
-				} else {															//Header if search is used
-					out.println("<h2> Showing Products containing '" + name + "'</h2>");
-				}
+				} else if (name.equals("")) {
+					// Show products based on category
+					if(categoryNum.equals("1")) {
+						out.println("<h2> Showing All Products in Category 'Cats' </h2>");
+					} else if(categoryNum.equals("2")) {
+						out.println("<h2> Showing All Products in Category 'Dogs' </h2>");
+					} else if(categoryNum.equals("3")) {
+						out.println("<h2> Showing All Products in Category 'Fish' </h2>");
+					} else if(categoryNum.equals("4")) {
+						out.println("<h2> Showing All Products in Category 'Fish' </h2>");
+					} else {
+						out.println("<h2> Showing All Products in All Categories </h2>");
+					}
+				} else {
+					// Show products based on search term and category
+					if(categoryNum.equals("1")) {
+						out.println("<h2> Showing Products Containing '" + name + "' in Category 'Cats' </h2>");
+					} else if(categoryNum.equals("2")) {
+						out.println("<h2> Showing Products Containing '" + name + "' in Category 'Dogs' </h2>");
+					} else if(categoryNum.equals("3")) {
+						out.println("<h2> Showing Products Containing '" + name + "' in Category 'Fish' </h2>");
+					} else if(categoryNum.equals("4")) {
+						out.println("<h2> Showing Products Containing '" + name + "' in Category 'Fish' </h2>");
+					} else {
+						out.println("<h2> Showing Products Containing '" + name + "' in All Categories </h2>");
+					}
+				}			
+			} 	
+
 				out.println("<table>");												//start table
 					out.println("<tr>");											//start new row for headers
 						out.println("<th> Add to Cart </th>");
 						out.println("<th> Product Name - Click to Learn More! </th> ");
 						out.println("<th> Price </th>");
 					out.println("</tr>");											//end row
-
-					
+				
 					while(rst.next()) {												//iterate through SQL output to print matching products
 						int id = rst.getInt("productId");
 						String pname = rst.getString("productName");
@@ -162,7 +212,7 @@ if(name != null) {
 						out.println("<td>" + NumberFormat.getCurrencyInstance().format(pprice) + "</td>");
                 		out.println("</tr>");										//end row
 					}
-				}
+				
 					
 				out.println("</table>");											//end the table
 					
@@ -184,7 +234,7 @@ if(name != null) {
 	catch (java.lang.ClassNotFoundException e)
 	{
 		out.println("ClassNotFoundException: " +e);
-	}
+	} 
 }
 %>
 </body>
