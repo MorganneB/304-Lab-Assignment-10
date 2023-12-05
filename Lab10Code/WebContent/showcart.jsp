@@ -96,7 +96,7 @@ else
 	NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
 	out.println("<h1>Your Shopping Cart</h1>");
-	out.print("<table><tr><th>Product Id</th><th>Product Name</th><th>Quantity</th><th></th>");
+	out.print("<table><tr><th>Product ID</th><th>Product Name</th><th>Quantity</th><th>Update</th><th>Remove</th>");
 	out.println("<th>Price</th><th>Subtotal</th></tr>");
 
 	double total =0;
@@ -113,6 +113,15 @@ else
 		out.print("<tr><td>"+product.get(0)+"</td>");
 		out.print("<td>"+product.get(1)+"</td>");
 		out.print("<td align=\"center\">"+product.get(3)+"</td>");
+
+		//update quantity start
+		out.print("<td>");
+		out.print("<form method=\"post\" action=\"updateQuant.jsp\">");
+		out.print("<input type=\"text\" name=\"newQuantity\" size=\"1\">");
+		out.print("   <input type=\"submit\" value=\"Submit\">"); 
+		out.print("</form></td>");
+		//update quantity end
+		
 		out.println("<td><a href='delCart.jsp?id=" + product.get(0) + "&name=" + product.get(1) + "'>Remove From Cart</a></td>");
 
 		Object price = product.get(2);

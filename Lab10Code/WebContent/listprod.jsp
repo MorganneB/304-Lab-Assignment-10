@@ -70,6 +70,12 @@
 		margin: 2px 2px;
     }
 
+		select {
+		padding: 10px 17px;
+		border: none;
+		border-radius: 4px;
+	}
+
 	ul {
 		list-style-type: none;
 		margin: 0;
