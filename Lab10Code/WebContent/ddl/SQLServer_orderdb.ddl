@@ -152,7 +152,7 @@ INSERT INTO category(categoryName) VALUES ('Seafood');
 INSERT INTO category(categoryName) VALUES ('Confections');
 INSERT INTO category(categoryName) VALUES ('Grains/Cereals');
 
-INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Chai', 1, '10 boxes x 20 bags',18.00);
+INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('KittyCat Fluffy Bed (Pink)', 1, 'Designed with comfort, and style and for you and your cat. Available in only one size, 60 x 60 x 20 cm', 49.99);
 INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Chang',1,'24 - 12 oz bottles',19.00);
 INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Aniseed Syrup',2,'12 - 550 ml bottles',10.00);
 INSERT product(productName, categoryId, productDesc, productPrice) VALUES ('Chef Anton''s Cajun Seasoning',2,'48 - 6 oz jars',22.00);
