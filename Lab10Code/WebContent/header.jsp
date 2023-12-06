@@ -53,6 +53,7 @@
             <li><a href="listorder.jsp">Orders</a></li>
             <li><a href="showcart.jsp">My Cart</a></li>
             <li><a href="admin.jsp">Administrators</a></li>
+			<li><a href ="addProduct.jsp">Add a Product</a></li>
 			 <li style="float:right"><a href="logout.jsp">Logout</a></li>
 			<li style="float:right"><a href="customer.jsp">My Profile</a></li>
         </ul>
