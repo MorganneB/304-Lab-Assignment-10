@@ -38,14 +38,35 @@
 		background-color: #d463ba;
 	}
 </style>
+
 <h1 align="center"> Morganne and Bella's Grocery</h1>
 
+<%
+    boolean isauthenticated = session.getAttribute("authenticatedUser") != null;
 
-<ul>
-	<li><a href="index.jsp">Main Page</a></li>
-	<li><a href="listprod.jsp">Shop Now</a></li>
-	<li><a href="listorder.jsp">Orders</a></li>
-	<li><a href="showcart.jsp">My Cart</a></li>
-	<li><a href="admin.jsp">Administrators</a></li>
-	<li><a href="logout.jsp">Log out</a></li>
-</ul>
+    if (isauthenticated) {
+		String userName = (String) session.getAttribute("authenticatedUser");
+%>
+        <ul>
+            <li><a href="index.jsp">Main Page</a></li>
+            <li><a href="listprod.jsp">Shop Now</a></li>
+            <li><a href="listorder.jsp">Orders</a></li>
+            <li><a href="showcart.jsp">My Cart</a></li>
+            <li><a href="admin.jsp">Administrators</a></li>
+			 <li style="float:right"><a href="logout.jsp">Logout</a></li>
+			<li style="float:right"><a href="customer.jsp">My Profile</a></li>
+        </ul>
+<%
+    } else {
+%>
+        <ul>
+            <li><a href="index.jsp">Main Page</a></li>
+            <li><a href="listprod.jsp">Shop Now</a></li>
+            <li><a href="listorder.jsp">Orders</a></li>
+            <li><a href="showcart.jsp">My Cart</a></li>
+            <li><a href="admin.jsp">Administrators</a></li>
+            <li style="float:right"><a href="login.jsp">Login</a></li>
+        </ul>
+<%
+    }
+%>

@@ -41,7 +41,7 @@
 			Statement stmt = con.createStatement();
 			
 			// Check if userId and password match some customer account. If so, set retStr to be the username.
-			String SQL = "SELECT userId, customerId FROM customer WHERE userId = ? AND password = ?";
+			String SQL = "SELECT * FROM customer WHERE userId = ? AND password = ?";
 			pstmt = con.prepareStatement(SQL);
 			pstmt.setString(1, username);
 			pstmt.setString(2, password);
