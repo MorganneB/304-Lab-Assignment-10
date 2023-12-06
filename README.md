@@ -17,7 +17,7 @@ I hope you can also edit this page! I wanted to create a document to track our u
   * Add Remove From Cart Feature
   * Change header based on if logged in/out, display logged in user
   * Updating product quantity in cart
-  * Add new product -> DONE, need to fix confirmation/invalid messages
+  * Add new product
 
 # Resources used: 
 
