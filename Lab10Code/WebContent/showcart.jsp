@@ -90,9 +90,7 @@ HashMap<String, ArrayList<Object>> productList = (HashMap<String, ArrayList<Obje
 if (productList == null)
 {	out.println("<H1>Your shopping cart is empty!</H1>");
 	productList = new HashMap<String, ArrayList<Object>>();
-}
-else
-{
+} else {
 	NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 
 	out.println("<h1>Your Shopping Cart</h1>");
@@ -117,6 +115,7 @@ else
 		//update quantity start
 		out.print("<td>");
 		out.print("<form method=\"post\" action=\"updateQuant.jsp\">");
+		out.print("<input type=\"hidden\" name=\"id\" value=\"" + product.get(0) + "\" />");
 		out.print("<input type=\"text\" name=\"newQuantity\" size=\"1\">");
 		out.print("   <input type=\"submit\" value=\"Submit\">"); 
 		out.print("</form></td>");
@@ -151,7 +150,7 @@ else
 		out.println("</tr>");
 		total = total +pr*qty;
 	}
-	out.println("<tr><td colspan=\"5\" align=\"right\"><b>Order Total</b></td>"
+	out.println("<tr><td colspan=\"6\" align=\"right\"><b>Order Total</b></td>"
 			+"<td align=\"right\">"+currFormat.format(total)+"</td></tr>");
 	out.println("</table>");
 

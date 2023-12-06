@@ -1,5 +1,8 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.ArrayList" %>
+<!DOCTYPE html>
+<html>
+<body>
 
 <%
 // Get the current list of products
@@ -13,17 +16,24 @@ if (productList == null) {	// No products currently in list.  Create a list.
 String newQuantityParam = request.getParameter("newQuantity");
 String id = request.getParameter("id");
 
-ArrayList<Object> product = new ArrayList<Object>();
+int newQuant = 0;
 
-
-	int newQuant = Integer.parseInt(newQuantityParam);
-    if (productList.containsKey(id)) {
-		out.print("UPDATED");
-		product = (ArrayList<Object>) productList.get(id);
-		product.set(3, newQuant);
+try {
+	newQuant = Integer.parseInt(newQuantityParam);
+} catch (NumberFormatException e) {
+	out.print("Error parsing quantity. Please enter a valid number.");
 }
 
+if (productList.containsKey(id)) {
+		ArrayList<Object> product = productList.get(id);
+		product.set(3, newQuant);
+} else {
+	out.print("Product not found in shopping cart: ");
+}
 
 session.setAttribute("productList", productList);
 %>
 <jsp:forward page="showcart.jsp" />
+
+</body>
+</html>
