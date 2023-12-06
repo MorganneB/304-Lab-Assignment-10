@@ -3,7 +3,7 @@ I hope you can also edit this page! I wanted to create a document to track our u
 
 ## Bella's current tasks: 
   * Updating product quantity in cart
-  * Add new product
+  * Add new product -> DONE, need to fix confirmation/invalid messages
 
 ## Morganne's current tasks: 
   * Creating Create User Page
