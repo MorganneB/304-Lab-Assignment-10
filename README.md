@@ -21,3 +21,6 @@ I hope you can also edit this page! I wanted to create a document to track our u
 ## Example online stores: 
 * Pet Smart Canada URL: [https://www.petsmart.ca/)https://www.petsmart.ca/](https://www.petsmart.ca/)https://www.petsmart.ca/
 * Homes Alive Canada URL: https://www.homesalive.ca/
+
+## Code examples / resources:
+* W3 Schools Horizontal NavBar: https://www.w3schools.com/css/css_navbar_horizontal.asp
