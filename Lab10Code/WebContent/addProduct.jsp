@@ -51,7 +51,8 @@
     <%@ include file="auth.jsp" %>
 
     <br>
-    <form>
+    <h3 style="float:left"> Fill in the following fields to add a product: </h3> <br><br><br><br>
+    <form action="addProduct.jsp" method="post">
         <label for="pname">Product Name: </label><br>
         <input type="text" id="pname" name="pname"><br>
         <br>
@@ -95,7 +96,11 @@
             con = DriverManager.getConnection(url, uid, pw);						
 
             if (pname == null || categoryNum == null || pdesc == null || pprice == null) {
-                throw new NullPointerException();
+                throw new NullPointerException("All fields are required.");
+            }
+
+            if (pname.isEmpty() || categoryNum == null || pdesc.isEmpty() || pprice.isEmpty()) {
+                throw new IllegalArgumentException("All fields are required.");
             }
 
             SQL = "INSERT product(productName, categoryId, productDesc, productPrice) VALUES (?, ?, ?, ?)";
@@ -104,17 +109,27 @@
 			pstmt.setInt(2, Integer.parseInt(categoryNum));
             pstmt.setString(3, pdesc);
             pstmt.setDouble(4, Double.parseDouble(pprice));
-            rst = pstmt.executeQuery();
 
-            if(rst.next()) {
-                out.println("<h2> Product Added! </h2>");
-                out.println("<h2><a href=\"listprod.jsp\"> Go to Products </a></h2>");
+            int rowsAffected = pstmt.executeUpdate();
+
+            if (rowsAffected > 0) {
+                out.print("<h3>Product Added Successfully!</h3>");
+                out.println("<h2><a href=\"listprod.jsp\">Go to Products</a></h2>");
+            } else {
+                out.print("<h3>Failed to add product. Please fill in all fields correctly! </h3>");
             }
-            
-        } catch (SQLException e) {
+
+        } catch (NumberFormatException e) {
+            out.print("<h3>Error: Invalid number format. Please enter a valid number for the price.</h3>");
             e.printStackTrace();
-        } catch (NullPointerException e) {
-            out.println("<h2> Please fill out all fields before continuing. </h2>");
+        } catch (IllegalArgumentException e) {
+            out.print("<h3>Error: " + e.getMessage() + "</h3>");
+        } catch (SQLException e) {
+            out.print("<h3>Error: " + e.getMessage() + "</h3>");
+            e.printStackTrace();
+        } catch (Exception e) {
+            out.print("<h3>Unexpected error occurred. Please try again.</h3>");
+            e.printStackTrace();
         } finally {
             try {														//Close all connections
                 if (rst != null)
