@@ -3,6 +3,7 @@ I hope you can also edit this page! I wanted to create a document to track our u
 
 ## Bella's current tasks: 
   * Updating product quantity in cart
+  * Change header based on if logged in/out, display logged in user
 
 ## Morganne's current tasks: 
   * Creating Create User Page
@@ -11,8 +12,9 @@ I hope you can also edit this page! I wanted to create a document to track our u
 
 ## Completed tasks: 
   * Update DDL to new products
+  * Add Remove From Cart Feature
 
-# Reasources used: 
+# Resources used: 
 
 ## Example online stores: 
 * Pet Smart Canada URL: [https://www.petsmart.ca/)https://www.petsmart.ca/](https://www.petsmart.ca/)https://www.petsmart.ca/
