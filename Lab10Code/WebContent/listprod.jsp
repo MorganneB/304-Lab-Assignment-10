@@ -45,6 +45,7 @@
 		color: #f991e1; 
 		font-size: 1.2em; 
 	}
+
 	input[type=text] {
         width: 25%;
         padding: 10px 17px;
@@ -70,7 +71,7 @@
 		margin: 2px 2px;
     }
 
-		select {
+	select {
 		padding: 10px 17px;
 		border: none;
 		border-radius: 4px;

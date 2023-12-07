@@ -10,19 +10,37 @@
 <title> Product Information </title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <style>
+
 	a {
 		text-decoration: none;
 		color: #ff67ca;
-		text-align: center
+	}
+
+	.add {
+		background-color: #f991e1;
+  		border: none;
+		color: white;
+		padding: 8px 19px;
+		border-radius: 6px;
+		margin: 2px 2px;
+		font-size: 14px;
 	}
 
 	img {
-		Padding: 10px,10px,10px,10px; 
+		padding: 20px,20px,30px,30px; 
+		width: 25%;
+		margin-left: auto;
+
 	}
 
 	h3 {
-		text-align:left;
 		color: #ff67ca;
+		padding-left: 20px;
+	}
+
+	.productPage {
+		padding-bottom: 10px;
+		padding-left: 20px;
 	}
 </style>
 </head>
@@ -52,6 +70,7 @@ try {
 		pstmt.setString(1, productId);
 		rst = pstmt.executeQuery();
 
+		out.print("<div class = \"productPage\">");
 		while(rst.next()) {										
 			int id = rst.getInt("productId");
 			String pname = rst.getString("productName");
@@ -71,10 +90,10 @@ try {
 			if(pBin != null) {
 				out.println("<img src= 'displayImage.jsp?id=" + id + "' ><br>");
 			}
-			out.println("<br><b>&emsp; Id:</b> " + id);
+			out.println("<br><br><b>&emsp; Product ID:</b> " + id);
 
 			out.println("<br><b>&emsp; Price:</b> " + NumberFormat.getCurrencyInstance().format(pprice) + "<br><br>");
-			out.println("&emsp; " + pname + " includes " + pDesc);
+			out.println("&emsp;&emsp; " + pname + " includes " + pDesc);
 
 			out.println("<h3>Product Reviews: </h3>");
             String reviewSQL = "SELECT productId, reviewRating, reviewDate, customerId, reviewComment FROM review WHERE productId = ?";
@@ -96,11 +115,13 @@ try {
             }
 
 			if(!reviewExists) {
-				out.println("This item has no reviews.");
+				out.println("&emsp; &emsp;This item has no reviews.");
 			}
-			out.print("<h3><a href='addReview.jsp'> Add A Review </a></h3>");
+			out.print("&emsp; &emsp; &emsp;<br><br><a class = \"add\" href='addReview.jsp'> Add A Review </a>");
 			out.println("<br><br><br><h3><a href='addcart.jsp?id=" + id + "&name=" + URLEncoder.encode(pname, "UTF-8") + "&price=" + pprice + "'> Add to Cart </a></h3>");
 			out.println("<h3><a href='listprod.jsp'> Continue Shopping </a></h3>");
+
+			out.print("</div>");
 		}
 	
 
