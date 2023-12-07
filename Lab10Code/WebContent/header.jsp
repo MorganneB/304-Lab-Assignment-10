@@ -66,6 +66,7 @@
             <li><a href="listorder.jsp">Orders</a></li>
             <li><a href="showcart.jsp">My Cart</a></li>
             <li><a href="admin.jsp">Administrators</a></li>
+			<li style="float:right"><a href="createUser.jsp">Sign Up</a></li>
             <li style="float:right"><a href="login.jsp">Login</a></li>
         </ul>
 <%
