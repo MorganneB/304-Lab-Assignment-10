@@ -1,3 +1,7 @@
+<%@ page import="java.sql.Date" %>
+<%@ page import ="java.util.Calendar" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,35 +55,30 @@
     <%@ include file="auth.jsp" %>
 
     <br>
-    <h3 style="float:left"> Fill in the following fields to add a product: </h3> <br><br><br><br>
-    <form action="addProduct.jsp" method="post">
-        <label for="pname">Product Name: </label><br>
-        <input type="text" id="pname" name="pname" required><br>
+    <h3 style="float:left"> Fill in the following fields to add a review! </h3> <br><br><br><br>
+    <form action="addReview.jsp" method="post">
+        <label for="productId">Product ID: </label><br>
+        <input type="text" id="productId" name="productId" required><br>
         <br>
-
-        Category:<br>
-        <input type="radio" id="1" name="categoryChoice" value="1">
-        <label for="1">Cats</label><br>
-        <input type="radio" id="2" name="categoryChoice" value="2">
-        <label for="2">Dogs</label><br>
-        <input type="radio" id="3" name="categoryChoice" value="3">
-        <label for="3">Fish</label><br>
-        <input type="radio" id="4" name="categoryChoice" value="3">
-        <label for="4">Birds</label><br>
-
+    
+        <label for="reviewRating">Rating (1-5): </label><br>
+        <input type="text" id="reviewRating" name="reviewRating" required><br>
         <br>
-        <label for="pdesc">Description: </label><br>
-        <input type="text" id="pdesc" name="pdesc" required>
-        <br><label for="pprice">Price: </label><br>
-        <input type="text" id="pprice" name="pprice" required>
-        <br><br> <input type="submit" value="Add to Store">
+    
+        <label for="reviewComment">Review Comment: </label><br>
+        <textarea id="reviewComment" name="reviewComment" rows="4" required></textarea><br>
+        <br>
+    
+        <input type="submit" value="Submit Review">
     </form>
 
     <%
-    String pname = request.getParameter("pname"); // 
-    String categoryNum = request.getParameter("categoryChoice"); 
-    String pdesc = request.getParameter("pdesc"); 
-    String pprice = request.getParameter("pprice"); 
+    
+    String rpid = request.getParameter("productId");
+    String pRating = request.getParameter("reviewRating");
+    String pComment = request.getParameter("reviewComment");
+
+    if (rpid != null && !rpid.isEmpty() && pRating != null && !pRating.isEmpty() && pComment != null && !pComment.isEmpty()) {
 
     try {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -89,34 +88,26 @@
 
 		Connection con = null;														
 		PreparedStatement pstmt = null;
-		ResultSet rst = null;
-		String SQL;
 
         try {
-            con = DriverManager.getConnection(url, uid, pw);						
+            con = DriverManager.getConnection(url, uid, pw);	
+            
+            Date currentDate = new Date(Calendar.getInstance().getTime().getTime());
 
-            if (pname == null || categoryNum == null || pdesc == null || pprice == null) {
-                throw new NullPointerException("All fields are required.");
-            }
-
-            if (pname.isEmpty() || categoryNum == null || pdesc.isEmpty() || pprice.isEmpty()) {
-                throw new IllegalArgumentException("All fields are required.");
-            }
-
-            SQL = "INSERT product(productName, categoryId, productDesc, productPrice) VALUES (?, ?, ?, ?)";
-            pstmt = con.prepareStatement(SQL);
-            pstmt.setString(1, pname);
-			pstmt.setInt(2, Integer.parseInt(categoryNum));
-            pstmt.setString(3, pdesc);
-            pstmt.setDouble(4, Double.parseDouble(pprice));
+            String sql = "INSERT INTO review (productId, reviewRating, reviewDate, reviewComment) VALUES (?, ?, ?, ?)";
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1, Integer.parseInt(rpid));
+            pstmt.setInt(2, Integer.parseInt(pRating));
+            pstmt.setDate(3, currentDate);
+            pstmt.setString(4, pComment);
 
             int rowsAffected = pstmt.executeUpdate();
 
             if (rowsAffected > 0) {
-                out.print("<h3>Product Added Successfully!</h3>");
-                out.println("<h2><a href=\"listprod.jsp\">Go to Products</a></h2>");
+                out.print("<h3>Review Submitted Successfully!</h3>");
+                out.println("<h2><a href=\"product.jsp?id=" + rpid + "\">Go back to Product</a></h2>");
             } else {
-                out.print("<h3>Failed to add product. Please fill in all fields correctly! </h3>");
+                out.print("<h3>Failed to submit review. Please fill in all fields correctly!</h3>");
             }
 
         } catch (NumberFormatException e) {
@@ -132,8 +123,6 @@
             e.printStackTrace();
         } finally {
             try {														//Close all connections
-                if (rst != null)
-                    rst.close();
                 if (pstmt != null)
                     pstmt.close();
                 if (con != null)
@@ -145,7 +134,8 @@
 
     } catch (Exception e) {
         e.printStackTrace();
-    } 
+    }
+} 
     %>
 </body>
 </html>

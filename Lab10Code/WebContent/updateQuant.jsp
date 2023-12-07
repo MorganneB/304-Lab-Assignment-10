@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-
+	
 <%
 // Get the current list of products
 @SuppressWarnings({"unchecked"})

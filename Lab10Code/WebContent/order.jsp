@@ -191,7 +191,7 @@ try {
 	pstmt5.executeUpdate();
 	out.println("<tr><td colspan=\"4\" align=\"right\"><b>Order Total</b></td>"+"<td align=\"right\">"+numFormat.format(cartTotal)+"</td></tr>");
 	out.print("</table>");																				//close ordersummary table
-	out.print("<h2> Order Completed! </h2>");
+	out.print("<h2> Thank you for your order! </h2>");
 	session.setAttribute("productList", null);															//clear cart
 	out.println("<h2><a href='shop.html'>Back to Main Page</a></h2>");									//Option to go back to main page
 

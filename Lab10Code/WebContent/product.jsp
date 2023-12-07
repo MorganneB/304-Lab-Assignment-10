@@ -19,6 +19,11 @@
 	img {
 		Padding: 10px,10px,10px,10px; 
 	}
+
+	h3 {
+		text-align:left;
+		color: #ff67ca;
+	}
 </style>
 </head>
 <body>
@@ -71,7 +76,30 @@ try {
 			out.println("<br><b>&emsp; Price:</b> " + NumberFormat.getCurrencyInstance().format(pprice) + "<br><br>");
 			out.println("&emsp; " + pname + " includes " + pDesc);
 
-			out.println("<h3><a href='addcart.jsp?id=" + id + "&name=" + URLEncoder.encode(pname, "UTF-8") + "&price=" + pprice + "'> Add to Cart </a></h3>");
+			out.println("<h3>Product Reviews: </h3>");
+            String reviewSQL = "SELECT productId, reviewRating, reviewDate, customerId, reviewComment FROM review WHERE productId = ?";
+            PreparedStatement pstmt2 = con.prepareStatement(reviewSQL);
+            pstmt2.setInt(1, id);
+            ResultSet rst2 = pstmt2.executeQuery();
+			
+			boolean reviewExists = false;
+
+            while (rst2.next()) {
+				reviewExists = true;
+                int rating = rst2.getInt("reviewRating");
+                Date date = rst2.getDate("reviewDate");
+                int customerId = rst2.getInt("customerId");
+                String comment = rst2.getString("reviewComment");
+
+				out.println("<h4> Customer ID: " + customerId + "<br>Date: " + date + "</h4>");
+				out.println("Rating: " + rating + "<br> Comment: " + comment);
+            }
+
+			if(!reviewExists) {
+				out.println("This item has no reviews.");
+			}
+			out.print("<h3><a href='addReview.jsp'> Add A Review </a></h3>");
+			out.println("<br><br><br><h3><a href='addcart.jsp?id=" + id + "&name=" + URLEncoder.encode(pname, "UTF-8") + "&price=" + pprice + "'> Add to Cart </a></h3>");
 			out.println("<h3><a href='listprod.jsp'> Continue Shopping </a></h3>");
 		}
 	
