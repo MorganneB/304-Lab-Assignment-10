@@ -162,7 +162,7 @@ try {
 
             out.println("</table>");
 
-			out.println("<br><br><br><h3><a href='addcart.jsp?id=" + id + "&name=" + URLEncoder.encode(pname, "UTF-8") + "&price=" + pprice + "'> Add to Cart </a></h3>");
+			out.println("<br><h3><a href='addcart.jsp?id=" + id + "&name=" + URLEncoder.encode(pname, "UTF-8") + "&price=" + pprice + "'> Add to Cart </a></h3>");
 			out.println("<h3><a href='listprod.jsp'> Continue Shopping </a></h3>");
 
 			out.print("</div>");

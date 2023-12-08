@@ -74,6 +74,8 @@
 <body>
 
 <%@ include file="header.jsp" %>
+<%@ include file="auth.jsp" %>
+
 
 <h2>Order List</h2>
 
