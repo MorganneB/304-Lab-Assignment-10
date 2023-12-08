@@ -5,8 +5,9 @@ A document to track our used reasources and progress <3
   * Add photos to ddl
     
 ## Bella's current tasks: 
-  * Product Review Section 
-
+  * update/delete product
+  * warehouse/inventory section
+    
 ## Morganne's current tasks: 
   
 
@@ -19,7 +20,8 @@ A document to track our used reasources and progress <3
   * Creating Create User Page
   * Create user account with data validation
   * Allow users to edit their account info (address, password)
-  *   
+  * Product Review Section 
+
 # Resources used: 
 
 ## Example online stores: 
