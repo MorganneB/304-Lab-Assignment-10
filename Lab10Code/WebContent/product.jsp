@@ -136,7 +136,11 @@ try {
 			if(!reviewExists) {
 				out.println("&emsp; &emsp;This item has no reviews.");
 			}
-			out.print("&emsp; &emsp; &emsp;<br><br><a class = \"add\" href='addReview.jsp'> Add A Review </a>");
+
+			boolean authenticated = session.getAttribute("authenticatedUser") != null;
+    		if (authenticated) {
+				out.print("&emsp; &emsp; &emsp;<br><br><a class = \"add\" href='addReview.jsp'> Add A Review </a>");
+    		} 
 
 			//inventory by warehouse
             out.println("<br><br><br><h3>Inventory: </h3>");
