@@ -1,5 +1,5 @@
 # Lab Assignment 10 Documentation & Progress tracking 
-I hope you can also edit this page! I wanted to create a document to track our used reasources and progress <3
+A document to track our used reasources and progress <3
 
 ## General Tasks:
   * Add photos to ddl
@@ -8,8 +8,7 @@ I hope you can also edit this page! I wanted to create a document to track our u
   * Product Review Section 
 
 ## Morganne's current tasks: 
-  * Create user account with data validation
-  * Allow users to edit their account info (address, password) 
+  
 
 ## Completed tasks: 
   * Update DDL to new products
@@ -17,8 +16,10 @@ I hope you can also edit this page! I wanted to create a document to track our u
   * Change header based on if logged in/out, display logged in user
   * Updating product quantity in cart
   * Add new product
-  *  * Creating Create User Page
-   
+  * Creating Create User Page
+  * Create user account with data validation
+  * Allow users to edit their account info (address, password)
+  *   
 # Resources used: 
 
 ## Example online stores: 
