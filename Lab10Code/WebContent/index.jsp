@@ -63,7 +63,7 @@
 		<h2 align="center"><a href="customer.jsp">Customer Info</a></h2>
 		<h2 align="center"><a href="admin.jsp">Administrators</a></h2>
 		<h2 align="center"><a href="showcart.jsp">My Cart</a></h2>
-		<h2 align="center"><a href="addProduct.jsp">Add A Product</a></h2>
+		<h2 align="center"><a href="editProducts.jsp">Edit Products</a></h2>
 		<h2 align="center"><a href="logout.jsp">Log out</a></h2>
 		<%
 		if (userName != null)

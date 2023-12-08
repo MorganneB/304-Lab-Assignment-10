@@ -1,6 +1,8 @@
 <%@ page import="java.sql.*,java.net.URLEncoder" %>
 <%@ page import="java.text.NumberFormat" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF8"%>
+<%@ page import="java.util.Set" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -213,10 +215,16 @@ if(name != null) {
 						out.println("<th> Product Name - Click to Learn More! </th> ");
 						out.println("<th> Price </th>");
 					out.println("</tr>");											//end row
-				
+					
+
+					Set<String> deleteProducts = (Set<String>) session.getAttribute("deleteProducts");
+
 					while(rst.next()) {												//iterate through SQL output to print matching products
 						int id = rst.getInt("productId");
-						String pname = rst.getString("productName");
+
+						//check if it has been marked 'deleted' first, if it has, don't print it
+						if(deleteProducts == null || !deleteProducts.contains(String.valueOf(id))) {
+							String pname = rst.getString("productName");
 						double pprice = rst.getDouble("productPrice");
 						
 						out.println("<tr>");										//new row, print add to cart link, product name, and price
@@ -224,6 +232,8 @@ if(name != null) {
 						out.println("<td><a href='product.jsp?id=" + id + "&name=" + URLEncoder.encode(pname, "UTF-8") + "&price=" + pprice + "'>" + pname + "</a></td>");
 						out.println("<td>" + NumberFormat.getCurrencyInstance().format(pprice) + "</td>");
                 		out.println("</tr>");										//end row
+					
+						}
 					}
 				
 					
