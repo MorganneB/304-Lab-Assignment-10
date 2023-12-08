@@ -43,6 +43,15 @@
 		font-size: 1.2em; 
 	}
 
+	input[type=submit] {
+		background-color: #f991e1;
+		border: none;
+		color: white;
+		padding: 8px 12px;
+		border-radius: 8px;
+		margin: 20px 20px;
+	}
+
 </style>
 
 <body>
@@ -137,5 +146,11 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw);
 %>
 
 </body>
+
+
+<form name="MyForm" method=post action="updateInfo.jsp">
+	<input class="submit" type="submit" name="Submit2" value="Click here to update personal information">
+	</form>
+
 </html>
 
