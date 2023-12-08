@@ -42,6 +42,24 @@
 		padding-bottom: 10px;
 		padding-left: 20px;
 	}
+
+	table {
+		border: 1px solid #ff67ca; 
+		border-collapse: collapse;
+		width: 50%;
+		margin-top: 20px;
+	}
+
+	th, td {
+		border: 1px solid #ff67ca; 
+		padding: 10px;
+		text-align: left;
+	}
+
+	th {
+		background-color: #ffc1f1;
+		color: white;
+	}
 </style>
 </head>
 <body>
@@ -95,6 +113,7 @@ try {
 			out.println("<br><b>&emsp; Price:</b> " + NumberFormat.getCurrencyInstance().format(pprice) + "<br><br>");
 			out.println("&emsp;&emsp; " + pname + " includes " + pDesc);
 
+			//Reviews
 			out.println("<h3>Product Reviews: </h3>");
             String reviewSQL = "SELECT productId, reviewRating, reviewDate, customerId, reviewComment FROM review WHERE productId = ?";
             PreparedStatement pstmt2 = con.prepareStatement(reviewSQL);
@@ -112,12 +131,33 @@ try {
 
 				out.println("<h4> Customer ID: " + customerId + "<br>Date: " + date + "</h4>");
 				out.println("Rating: " + rating + "<br> Comment: " + comment);
-            }
+			}
 
 			if(!reviewExists) {
 				out.println("&emsp; &emsp;This item has no reviews.");
 			}
 			out.print("&emsp; &emsp; &emsp;<br><br><a class = \"add\" href='addReview.jsp'> Add A Review </a>");
+
+			//inventory by warehouse
+            out.println("<br><br><br><h3>Inventory: </h3>");
+
+            String warehouseSQL = "SELECT w.warehouseName, pi.quantity FROM warehouse w JOIN productinventory pi ON w.warehouseId = pi.warehouseId WHERE pi.productId = ?";
+            PreparedStatement pstmt3 = con.prepareStatement(warehouseSQL);
+            pstmt3.setInt(1, id);
+            ResultSet rst3 = pstmt3.executeQuery();
+			int quantity = 0;
+
+            out.println("<table>");
+            out.println("<tr><th>Warehouse</th> <th>Quantity</th></tr>");
+
+            while (rst3.next()) {
+                String warehouseName = rst3.getString("warehouseName");
+                quantity = rst3.getInt("quantity");
+                out.println("<tr><td>" + warehouseName + "</td><td>" + quantity + "</td></tr>");
+            }
+
+            out.println("</table>");
+
 			out.println("<br><br><br><h3><a href='addcart.jsp?id=" + id + "&name=" + URLEncoder.encode(pname, "UTF-8") + "&price=" + pprice + "'> Add to Cart </a></h3>");
 			out.println("<h3><a href='listprod.jsp'> Continue Shopping </a></h3>");
 

@@ -126,6 +126,7 @@
 	<option value="3">Fish</option>
 	<option value="4">Birds</option>
 </select>
+
 <input type="text" name="productName" size="50">
 <input type="submit" value="Submit"><input type="reset" value="Reset"> (Leave blank for all products)
 </form>
