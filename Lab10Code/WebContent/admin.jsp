@@ -53,8 +53,8 @@ try {
     con = DriverManager.getConnection(url, uid, pw);
 	Statement stmt = con.createStatement();
 
-    // TODO: Write SQL query that prints out total order amount by day
-    String sql = "SELECT CONVERT(VARCHAR, orderDate, 23) AS formatDate, SUM(totalAmount) AS total " +
+	//Print out orders
+	String sql = "SELECT CONVERT(VARCHAR, orderDate, 23) AS formatDate, SUM(totalAmount) AS total " +
     "FROM ordersummary GROUP BY CONVERT(VARCHAR, orderDate, 23)";
     pstmt = con.prepareStatement(sql);
     rst = pstmt.executeQuery();
@@ -77,6 +77,58 @@ try {
     }
 
     out.println("</table>");
+
+	//print out all customers
+	String customersql = "SELECT customerId, firstName, lastName, email, phonenum, address, city, state, postalCode, country, userid FROM customer";
+
+	PreparedStatement pstmt1 = con.prepareStatement(customersql);
+    ResultSet rst1 = pstmt1.executeQuery();
+
+	out.println("<h2> Customer Accounts </h2>");
+	out.println("<table>"); 
+		out.print("<tr>"); 							
+			out.println("<th>Customer Id:</th>"); 		
+					out.println("<th>First Name:</th>"); 		
+					out.println("<th>Last Name:</th>"); 
+					out.println("<th>Email:</th>");
+					out.println("<th>Phone Number:</th>"); 	
+					out.println("<th>Address:</th>"); 
+					out.println("<th>City:</th>"); 	
+					out.println("<th>State:</th>"); 
+					out.println("<th>Postal Code:</th>"); 	
+					out.println("<th>Country:</th>"); 
+					out.println("<th>User Id:</th>"); 
+        out.println("</tr>");
+	
+		while(rst1.next()) {	
+			String customerId = rst1.getString(1); 
+			String firstName = rst1.getString(2); 
+			String lastName = rst1.getString(3); 
+			String email = rst1.getString(4);  
+			String phonenum = rst1.getString(5); 
+			String address = rst1.getString(6); 
+			String city = rst1.getString(7); 
+			String state = rst1.getString(8); 
+			String postalCode = rst1.getString(9); 
+			String country = rst1.getString(10); 
+			String userid = rst1.getString(11);
+
+			out.println("<tr>"); 
+			out.println("<td>" + customerId + "</td>");
+			out.println("<td>" + firstName + "</td>");
+			out.println("<td>" + lastName + "</td>");
+			out.println("<td>" + email + "</td>");
+			out.println("<td>" + phonenum + "</td>"); 
+			out.println("<td>" + address + "</td>");
+			out.println("<td>" + city + "</td>");
+			out.println("<td>" + state + "</td>"); 
+			out.println("<td>" + postalCode + "</td>");
+			out.println("<td>" + country + "</td>");
+			out.println("<td>" + userid + "</td>"); 
+			out.println("</tr>");
+    	}		
+	
+	out.println("</table>");
 
 } catch (SQLException ex) {
     out.println(ex);
