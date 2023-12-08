@@ -32,3 +32,4 @@ A document to track our used reasources and progress <3
 ## Code examples / resources:
 * W3 Schools Horizontal NavBar: https://www.w3schools.com/css/css_navbar_horizontal.asp
 * W3 Schools HTML Form Guide: https://www.w3schools.com/html/html_forms.asp
+* W3 Schools CSS Link Styling: https://www.w3schools.com/css/css_link.asp
