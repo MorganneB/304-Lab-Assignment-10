@@ -9,7 +9,7 @@ A document to track our used reasources and progress <3
   * warehouse/inventory section
     
 ## Morganne's current tasks: 
-  
+  * Check out data validation 
 
 ## Completed tasks: 
   * Update DDL to new products
@@ -20,7 +20,8 @@ A document to track our used reasources and progress <3
   * Creating Create User Page
   * Create user account with data validation
   * Allow users to edit their account info (address, password)
-  * Product Review Section 
+  * Product Review Section
+  * Checkout with payment/shipment info 
 
 # Resources used: 
 
