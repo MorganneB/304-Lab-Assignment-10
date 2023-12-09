@@ -99,9 +99,6 @@
 		text-decoration: none;
 	}
 
-	li a:hover {
-		background-color: #d463ba;
-	}
 
 	a {
 		text-decoration: none;

@@ -189,6 +189,8 @@ INSERT INTO productInventory(productId, warehouseId, quantity, price) VALUES (7,
 INSERT INTO productInventory(productId, warehouseId, quantity, price) VALUES (8, 1, 0, 40);
 INSERT INTO productInventory(productId, warehouseId, quantity, price) VALUES (9, 1, 2, 97);
 INSERT INTO productInventory(productId, warehouseId, quantity, price) VALUES (10, 1, 3, 31);
+INSERT INTO productInventory(productId, warehouseId, quantity, price) VALUES (19, 1, 6, 14);
+
 
 INSERT INTO customer (firstName, lastName, email, phonenum, address, city, state, postalCode, country, userid, password) VALUES ('Arnold', 'Anderson', 'a.anderson@gmail.com', '204-111-2222', '103 AnyWhere Street', 'Winnipeg', 'MB', 'R3X 45T', 'Canada', 'arnold' , '304Arnold!');
 INSERT INTO customer (firstName, lastName, email, phonenum, address, city, state, postalCode, country, userid, password) VALUES ('Bobby', 'Brown', 'bobby.brown@hotmail.ca', '572-342-8911', '222 Bush Avenue', 'Boston', 'MA', '22222', 'United States', 'bobby' , '304Bobby!');

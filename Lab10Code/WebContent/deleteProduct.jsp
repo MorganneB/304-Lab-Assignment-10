@@ -14,17 +14,6 @@
             color: #5D5348; 
             font-family: Arial, sans-serif;
         }
-    
-        h1 {
-            color: #ff67ca; 
-            font-size: 1.6em; 
-        }
-    
-        h2 {
-            color: #f991e1; 
-            font-size: 1.6em; 
-            text-align: center; 
-        }
 
         input[type=text] {
             width: 25%;
@@ -34,7 +23,7 @@
         }
     
         input[type=submit] {
-            background-color: #f991e1;
+            background-color: #a2bbfc;
             border: none;
             color: white;
             padding: 10px 25px;

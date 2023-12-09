@@ -10,18 +10,18 @@
 	}
 
 	h2 {
-		color: #f991e1; 
+		color: #a2bbfc; ; 
 		font-size: 1.2em; 
 	}
 
 	h3 {
-		color: #ff67ca; 
+		color: #a2bbfc; ; 
 		font-size: 1.1em; 
 	}
 
 
 	input[type=submit] {
-        background-color: #f991e1;
+        background-color: #a2bbfc; ;
   		border: none;
 		color: white;
 		padding: 8px 12px;

@@ -14,44 +14,103 @@
 <title>Morganne and Bella's Grocery Order Processing</title>
 <style> 
 	body {
-		background-color: #ffe6f3; 
+		background-color: #faf5f0; 
 		color: #5D5348; 
-		font-size: 1.2em; 
 		font-family: Arial, sans-serif;
 	}
 
 	table {
-		border: 1px solid #ff67ca; 
+		border: 1px solid #a2bbfc; 
 		border-collapse: collapse;
 		width: 100%;
 		margin-top: 20px;
 	}
 
 	th, td {
-		border: 1px solid #ff67ca; 
+		border: 1px solid #a2bbfc; 
 		padding: 10px;
 		text-align: left;
 	}
 
 	th {
-		background-color: #ffc1f1;
+		background-color: #a2bbfc;
 		color: white;
 	}
 
 	h1 {
-		color: #fff1e2; 
+		color: #a2bbfc; 
 		font-size: 1.6em; 
 	}
 
 	h2 {
-		color: #f991e1; 
+		color: #a2bbfc; 
 		font-size: 1.6em; 
 		text-align: center; 
 	}
 
 	h3 {
-		color: #f991e1; 
+		color: #a2bbfc; 
 		font-size: 1.2em; 
+	}
+
+	input[type=text] {
+        width: 25%;
+        padding: 10px 17px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+	input[type=submit] {
+        background-color: #a2bbfc;
+  		border: none;
+		color: white;
+		padding: 10px 25px;
+		border-radius: 8px;
+		margin: 2px 2px;
+    }
+
+	input[type=reset] {
+        background-color: #a2bbfc;
+  		border: none;
+		color: white;
+		padding: 10px 25px;
+		border-radius: 8px;
+		margin: 2px 2px;
+    }
+
+	select {
+		padding: 10px 17px;
+		border: none;
+		border-radius: 4px;
+	}
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #a2bbfc;
+	}
+
+	li {
+		float: left;
+	}
+
+	li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+	li a:hover {
+		background-color: #d463ba;
+	}
+
+	a {
+		text-decoration: none;
+		color: #5D5348;
 	}
 
 	
@@ -193,7 +252,7 @@ try {
 	out.print("</table>");																				//close ordersummary table
 	out.print("<h2> Thank you for your order! </h2>");
 	session.setAttribute("productList", null);															//clear cart
-	out.println("<h2><a href='shop.html'>Back to Main Page</a></h2>");									//Option to go back to main page
+	out.println("<h2><a href='index.jsp'>Back to Main Page</a></h2>");									//Option to go back to main page
 
 
 } catch (SQLException ex) {																				//Use characters in customerID
