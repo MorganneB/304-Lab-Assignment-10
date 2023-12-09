@@ -6,45 +6,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Morganne and Bella's Grocery</title>
+<title>CLOUD k9</title>
 <style> 
 	body {
-		background-color: #ffe6f3; 
+		background-color: #faf5f0; 
 		color: #5D5348; 
 		font-family: Arial, sans-serif;
 	}
 
 	table {
-		border: 1px solid #ff67ca; 
+		border: 1px solid #a2bbfc; 
 		border-collapse: collapse;
 		width: 100%;
 		margin-top: 20px;
 	}
 
 	th, td {
-		border: 1px solid #ff67ca; 
+		border: 1px solid #a2bbfc; 
 		padding: 10px;
 		text-align: left;
 	}
 
 	th {
-		background-color: #ffc1f1;
+		background-color: #a2bbfc;
 		color: white;
 	}
 
 	h1 {
-		color: #ff67ca; 
+		color: #a2bbfc; 
 		font-size: 1.6em; 
 	}
 
 	h2 {
-		color: #f991e1; 
+		color: #a2bbfc; 
 		font-size: 1.6em; 
 		text-align: center; 
 	}
 
 	h3 {
-		color: #f991e1; 
+		color: #a2bbfc; 
 		font-size: 1.2em; 
 	}
 
@@ -56,7 +56,7 @@
     }
 
 	input[type=submit] {
-        background-color: #f991e1;
+        background-color: #a2bbfc;
   		border: none;
 		color: white;
 		padding: 10px 25px;
@@ -65,7 +65,7 @@
     }
 
 	input[type=reset] {
-        background-color: #f991e1;
+        background-color: #a2bbfc;
   		border: none;
 		color: white;
 		padding: 10px 25px;
@@ -84,7 +84,7 @@
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
-		background-color: #f991e1;
+		background-color: #a2bbfc;
 }
 
 	li {

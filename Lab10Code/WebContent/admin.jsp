@@ -4,31 +4,31 @@
 <title>Administrator Page</title>
 <style>
     body {
-		background-color: #ffe6f3; 
+		background-color: #faf5f0; 
 		color: #5D5348; 
 		font-family: Arial, sans-serif;
 	}
 
 	table {
-		border: 1px solid #ff67ca; 
+		border: 1px solid #7ca0fc; 
 		border-collapse: collapse;
 		width: 100%;
 		margin-top: 20px;
 	}
 
 	th, td {
-		border: 1px solid #ff67ca; 
+		border: 1px solid #7ca0fc; 
 		padding: 10px;
 		text-align: left;
 	}
 
 	th {
-		background-color: #ffc1f1;
+		background-color: #a2bbfc;
 		color: white;
 	}
 
 	h2 {
-		color: #ff67ca; 
+		color: #7ca0fc; 
 		font-size: 1.1em; 
 	}
 </style>

@@ -9,7 +9,7 @@
 
 <html>
 <head>
-<title>Morganne and Bella's Grocery Shipment Processing</title>
+<title>CLOUD k9 Shipment Processing</title>
 <style>
 	body {
 		background-color: #ffe6f3; 

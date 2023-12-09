@@ -5,46 +5,46 @@
 </head>
 <style>
     body {
-		background-color: #ffe6f3; 
+		background-color: faf5f0; 
 		color: #5D5348; 
 		font-family: Arial, sans-serif;
 	}
 
 	table {
-		border: 1px solid #ff67ca; 
+		border: 1px solid #7ca0fc; 
 		border-collapse: collapse;
 		width: 100%;
 		margin-top: 20px;
 	}
 
 	th, td {
-		border: 1px solid #ff67ca; 
+		border: 1px solid #7ca0fc; 
 		padding: 10px;
 		text-align: left;
 	}
 
 	th {
-		background-color: #ffc1f1;
+		background-color: #a2bbfc;
 		color: white;
 	}
 	h1 {
-		color: #ff67ca; 
+		color: #7ca0fc; 
 		font-size: 1.6em; 
 	}
 
 	h2 {
-		color: #f991e1; 
+		color: #a2bbfc; 
 		font-size: 1.6em; 
 		text-align: center; 
 	}
 
 	h3 {
-		color: #f991e1; 
+		color: #a2bbfc; 
 		font-size: 1.2em; 
 	}
 
 	input[type=submit] {
-		background-color: #f991e1;
+		background-color: #a2bbfc;
 		border: none;
 		color: white;
 		padding: 8px 12px;

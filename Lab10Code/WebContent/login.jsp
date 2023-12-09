@@ -4,19 +4,19 @@
 <title>Login Screen</title>
 <style>
 	body {
-		background-color: #ffe6f3; 
+		background-color: #faf5f0; 
 		color: #5D5348; 
 		font-family: Arial, sans-serif;
 	}
 
 	h3 {
-		color: #ff67ca; 
+		color: #7ca0fc; 
 		font-size: 1.1em; 
 	}
 
 
 	input[type=submit] {
-        background-color: #f991e1;
+        background-color: #a2bbfc;
   		border: none;
 		color: white;
 		padding: 8px 12px;

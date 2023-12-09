@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Morganne and Bella's Grocery Main Page</title>
+	<title>CLOUD k9</title>
         
 	<style> 
 			body {
-					background-color: #ffe6f3; 
-					color: #5D5348; 
+					background-color: #faf5f0; 
+					color: #a2bbfc; 
 					font-family: Arial, sans-serif;
 			}
 	
 			h1 {
-					color: #f991e1; 
+					color: #7ca0fc; 
 					font-size: 1.8em; 
 					text-align: center; 
 			}
 
 			h2 {
-					color: #f991e1; 
+					color: #a2bbfc; 
 					font-size: 1.5em; 
 					text-align: center; 
 			}
@@ -27,7 +27,7 @@
 					margin: 0;
 					padding: 0;
 					overflow: hidden;
-					background-color: #f991e1;
+					background-color: #7ca0fc;
 			}
 			
 			li {
@@ -43,13 +43,13 @@
 			}
 			
 			li a:hover {
-					background-color: #d463ba;
+					background-color: #7ca0fc;
 			}
 
 			</style>
 </head>
 <body>
-<h1 align="center">Welcome to Morganne and Bella's Grocery</h1>
+<h1 align="center">CLOUD k9</h1>
 
 <%
     boolean authenticated = session.getAttribute("authenticatedUser") != null;
