@@ -4,24 +4,36 @@
 <title>Update personal information</title>
 <style>
 	body {
-		background-color: #ffe6f3; 
+		background-color: #faf5f0; 
 		color: #5D5348; 
 		font-family: Arial, sans-serif;
 	}
 
 	h2 {
+<<<<<<< HEAD
 		color: #a2bbfc; ; 
+=======
+		color: #7ca0fc; 
+>>>>>>> 937ea7f06e05b82a7fb55b338a967f26f86dd518
 		font-size: 1.2em; 
 	}
 
 	h3 {
+<<<<<<< HEAD
 		color: #a2bbfc; ; 
+=======
+		color: #7ca0fc; 
+>>>>>>> 937ea7f06e05b82a7fb55b338a967f26f86dd518
 		font-size: 1.1em; 
 	}
 
 
 	input[type=submit] {
+<<<<<<< HEAD
         background-color: #a2bbfc; ;
+=======
+        background-color: #7ca0fc;
+>>>>>>> 937ea7f06e05b82a7fb55b338a967f26f86dd518
   		border: none;
 		color: white;
 		padding: 8px 12px;

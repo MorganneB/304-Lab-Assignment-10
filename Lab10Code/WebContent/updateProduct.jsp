@@ -4,10 +4,24 @@
 <title> Update A Product </title>
     <style>
         body {
-            background-color: #ffe6f3; 
+            background-color: #faf5f0; 
             color: #5D5348; 
             font-family: Arial, sans-serif;
         }
+<<<<<<< HEAD
+=======
+    
+        h1 {
+            color: #7ca0fc; 
+            font-size: 1.6em; 
+        }
+    
+        h2 {
+            color: #7ca0fc; 
+            font-size: 1.6em; 
+            text-align: center; 
+        }
+>>>>>>> 937ea7f06e05b82a7fb55b338a967f26f86dd518
 
         input[type=text] {
             width: 25%;
@@ -17,7 +31,11 @@
         }
     
         input[type=submit] {
+<<<<<<< HEAD
             background-color: #a2bbfc;
+=======
+            background-color: #7ca0fc;
+>>>>>>> 937ea7f06e05b82a7fb55b338a967f26f86dd518
             border: none;
             color: white;
             padding: 10px 25px;

@@ -17,8 +17,10 @@
 	table {
 		border: 1px solid #a2bbfc; 
 		border-collapse: collapse;
-		width: 100%;
+		width: 80%;
 		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	th, td {
