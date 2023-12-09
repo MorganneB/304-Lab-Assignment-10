@@ -154,7 +154,7 @@ if (productList == null)
 			+"<td align=\"right\">"+currFormat.format(total)+"</td></tr>");
 	out.println("</table>");
 
-	out.println("<h2><a href=\"checkout.jsp\">Check Out</a></h2>");
+	out.println("<h2><a href=\"secureCheckout.jsp\">Confirm payment and shipping information</a></h2>");
 }
 %>
 <h2><a href="listprod.jsp">Continue Shopping</a></h2>

@@ -44,12 +44,15 @@
 </head>
 <body>
 
-<h3> Enter your customer id and password to complete the transaction: </h3>
+	<%@ include file="auth.jsp" %>
+
+<h3>Please review your shipping and payment information below: </h3>
+
 
 <form method="get" action="order.jsp">
-<label for="fname">Customer Id:</label><br>
-<input type="text" name="customerId" size="50"> <br>
-<label for="fname">Password:</label><br>
+<label for="fname">Customer Id:</label><input type="text" name="customerId" size="50"> 
+
+<label for="fname">Password:</label>
 <input type="text" name="customerPassword" size="50"> <br>
 <input type="submit" value="Submit"> 	<input type="reset" value="Reset">
 </form>

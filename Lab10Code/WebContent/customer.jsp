@@ -87,7 +87,7 @@ String pw = "304#sa#pw";
 try ( Connection con = DriverManager.getConnection(url, uid, pw);
 	  Statement stmt = con.createStatement();)
 {
-		String SQL = "SELECT customerId, firstName, lastName, email, phonenum, address, city, state, postalCode, country, userid FROM customer WHERE userId = ?"; 
+		String SQL = "SELECT customerId, firstName, lastName, email, phonenum, address, city, state, postalCode, country, userid, password FROM customer WHERE userId = ?"; 
 	
 		PreparedStatement pstmt = con.prepareStatement(SQL);
 		pstmt.setString(1, userName);
@@ -108,6 +108,7 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw);
 		String postalCode = rst.getString(9); 
 		String country = rst.getString(10); 
 		String userid = rst.getString(11); 
+		String password = rst.getString(12); 
 
 			out.println("<table>"); 							
 				out.print("<tr>"); 							
@@ -122,6 +123,7 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw);
 					out.println("<th>Postal Code:</th>"); 	
 					out.println("<th>Country:</th>"); 
 					out.println("<th>User Id:</th>"); 
+					out.println("<th>Password:</th>"); 
 				out.println("</tr>");	
 				out.println("<tr>"); 
 					out.println("<td>" + customerId + "</td>");
@@ -135,6 +137,7 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw);
 					out.println("<td>" + postalCode + "</td>");
 					out.println("<td>" + country + "</td>");
 					out.println("<td>" + userid + "</td>"); 
+					out.println("<td>" + password + "</td>"); 
 				out.println("</tr>");
 			out.println("</table>");
 
