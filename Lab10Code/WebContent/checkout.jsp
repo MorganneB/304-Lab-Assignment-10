@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> Grocery CheckOut Line</title>
+<title>Check out</title>
 <style> 
 	body {
-		background-color: #ffe6f3; 
+		background-color: #faf5f0; 
 		color: #5D5348; 
 		font-family: Arial, sans-serif;
 	}
 
 	h3 {
-		color: #f991e1; 
+		color: #7ca0fc; 
 		font-size: 1.3em; 
 		text-align: left; 
 	}
@@ -23,7 +23,7 @@
     }
 
 	input[type=submit] {
-        background-color: #f991e1;
+        background-color: #7ca0fc;
   		border: none;
 		color: white;
 		padding: 10px 25px;
@@ -32,7 +32,7 @@
     }
 
 	input[type=reset] {
-        background-color: #f991e1;
+        background-color: #7ca0fc;
   		border: none;
 		color: white;
 		padding: 10px 25px;

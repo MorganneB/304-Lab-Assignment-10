@@ -18,36 +18,36 @@
 	}
 
 	table {
-		border: 1px solid #ff67ca; 
+		border: 1px solid #7ca0fc; 
 		border-collapse: collapse;
 		width: 100%;
 		margin-top: 20px;
 	}
 
 	th, td, title {
-		border: 1px solid #ff67ca; 
+		border: 1px solid #7ca0fc; 
 		padding: 10px;
 		text-align: left;
 	}
 
 	th {
-		background-color: #ffc1f1;
+		background-color: #a2bbfc;
 		color: white;
 	}
 
 	h1 {
-		color: #ff67ca; 
+		color: #7ca0fc; 
 		font-size: 1.6em; 
 	}
 
 	h2 {
-		color: #f991e1; 
+		color: #a2bbfc; 
 		font-size: 1.6em; 
 		text-align: center; 
 	}
 
 	h3 {
-		color: #f991e1; 
+		color: #a2bbfc; 
 		font-size: 1.2em; 
 	}
 
@@ -56,7 +56,7 @@
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
-		background-color: #f991e1;
+		background-color: #a2bbfc;
 	}
 
 	li {
@@ -72,7 +72,7 @@
 	}
 
 	li a:hover {
-		background-color: #d463ba;
+		background-color: #7ca0fc;
 	}
 
 

@@ -1,16 +1,16 @@
 <style>
     body {
-		background-color: #ffe6f3; 
+		background-color: #faf5f0; 
 		color: #5D5348; 
 		font-family: Arial, sans-serif;
 	}
     h1 {
-		color: #ff67ca; 
-		font-size: 1.6em; 
-        font-family: Arial, sans-serif;
+		color: #7ca0fc; 
+		font-size: 2.0em; 
+        font-family: impact sans-serif;
 	}
     h2 {
-		color: #f991e1; 
+		color: #a2bbfc; 
 		font-size: 1.6em; 
 		text-align: center; 
 	}
@@ -19,7 +19,7 @@
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
-		background-color: #f991e1;
+		background-color: #7ca0fc;
 }
 
 	li {
@@ -35,11 +35,11 @@
 	}
 
 	li a:hover {
-		background-color: #d463ba;
+		background-color: #a2bbfc;
 	}
 </style>
 
-<h1 align="center"> Morganne and Bella's Grocery</h1>
+<h1 align="center"><b>CLOUD k9</b></h1>
 
 <%
     boolean isauthenticated = session.getAttribute("authenticatedUser") != null;

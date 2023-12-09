@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Morganne and Bella's Grocery</title>
+<title>CLOUD k9</title>
     <style>
         body {
             background-color: #ffe6f3; 

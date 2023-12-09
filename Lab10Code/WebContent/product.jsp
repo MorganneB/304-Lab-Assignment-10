@@ -13,11 +13,11 @@
 
 	a {
 		text-decoration: none;
-		color: #ff67ca;
+		color: #7ca0fc;
 	}
 
 	.add {
-		background-color: #f991e1;
+		background-color: #a2bbfc;
   		border: none;
 		color: white;
 		padding: 8px 19px;
@@ -28,15 +28,18 @@
 
 	img {
 		padding: 20px,20px,30px,30px; 
-		width: 25%;
+		width: 20%;
 		margin-left: auto;
 
 	}
 
 	h3 {
-		color: #ff67ca;
+		color: #7ca0fc;
 		padding-left: 20px;
+		margin-left: auto;
+		margin-right: auto;
 	}
+	
 
 	.productPage {
 		padding-bottom: 10px;
@@ -44,20 +47,22 @@
 	}
 
 	table {
-		border: 1px solid #ff67ca; 
+		border: 1px solid #7ca0fc; 
 		border-collapse: collapse;
 		width: 50%;
 		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	th, td {
-		border: 1px solid #ff67ca; 
+		border: 1px solid #7ca0fc; 
 		padding: 10px;
 		text-align: left;
 	}
 
 	th {
-		background-color: #ffc1f1;
+		background-color: #a2bbfc;
 		color: white;
 	}
 </style>
