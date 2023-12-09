@@ -4,24 +4,24 @@
 <title>Update personal information</title>
 <style>
 	body {
-		background-color: #ffe6f3; 
+		background-color: #faf5f0; 
 		color: #5D5348; 
 		font-family: Arial, sans-serif;
 	}
 
 	h2 {
-		color: #f991e1; 
+		color: #7ca0fc; 
 		font-size: 1.2em; 
 	}
 
 	h3 {
-		color: #ff67ca; 
+		color: #7ca0fc; 
 		font-size: 1.1em; 
 	}
 
 
 	input[type=submit] {
-        background-color: #f991e1;
+        background-color: #7ca0fc;
   		border: none;
 		color: white;
 		padding: 8px 12px;

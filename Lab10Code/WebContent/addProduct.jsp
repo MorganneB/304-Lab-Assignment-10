@@ -4,18 +4,18 @@
 <title>CLOUD k9</title>
     <style>
         body {
-            background-color: #ffe6f3; 
+            background-color: #faf5f0; 
             color: #5D5348; 
             font-family: Arial, sans-serif;
         }
     
         h1 {
-            color: #ff67ca; 
+            color: #7ca0fc; 
             font-size: 1.6em; 
         }
     
         h2 {
-            color: #f991e1; 
+            color: #a2bbfc; 
             font-size: 1.6em; 
             text-align: center; 
         }
@@ -28,7 +28,7 @@
         }
     
         input[type=submit] {
-            background-color: #f991e1;
+            background-color: #a2bbfc;
             border: none;
             color: white;
             padding: 10px 25px;
