@@ -64,6 +64,7 @@
 
 <%
 	String userName = (String) session.getAttribute("authenticatedUser");
+	String cid = (String) session.getAttribute("customerId");
 %>
 
 <%
@@ -137,7 +138,40 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw);
 				out.println("</tr>");
 			out.println("</table>");
 
-				}
+			}
+		
+		out.println("<form name=\"MyForm\" method=post action=\"updateInfo.jsp\"><input class=\"submit\" type=\"submit\" name=\"Submit2\" value=\"Click here to update personal information\"></form>");
+			
+		out.print("<h2>Your Orders</h2>");
+		String SQL1 = "SELECT orderId, orderDate, shiptoAddress, shiptoCity, shiptoState, shiptoPostalCode, shiptoCountry, customerId FROM ordersummary WHERE customerId = ?"; 
+		PreparedStatement pstmt1 = con.prepareStatement(SQL1);
+		pstmt1.setString(1, cid);
+		ResultSet rst1 = pstmt1.executeQuery(); 
+
+		out.println("<table>"); 							
+			out.print("<tr>"); 							
+				out.println("<th>Order Id:</th>"); 		
+				out.println("<th>Order Date:</th>"); 		
+				out.println("<th>Address:</th>"); 
+
+			out.println("</tr>");
+
+		while (rst1.next()){ 
+			String orderId = rst1.getString(1); 
+			String orderDate = rst1.getString(2); 
+			String shiptoAddress = rst1.getString(3); 	
+
+			out.println("<tr>"); 
+				out.println("<td>" + orderId + "</td>");
+				out.println("<td>" + orderDate + "</td>");
+				out.println("<td>" + shiptoAddress + "</td>");
+			out.println("</tr>");
+			
+		}
+
+		out.println("</table>");
+
+			
 
 } catch (Exception e) {
     out.println("Exception: " + e);
@@ -146,11 +180,6 @@ try ( Connection con = DriverManager.getConnection(url, uid, pw);
 %>
 
 </body>
-
-
-<form name="MyForm" method=post action="updateInfo.jsp">
-	<input class="submit" type="submit" name="Submit2" value="Click here to update personal information">
-	</form>
 
 </html>
 
